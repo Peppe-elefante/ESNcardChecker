@@ -37,7 +37,7 @@ function eventHandler(eventSelector = 1) {
   fetchAllAttendees(title, eventSelector).then((attendees) => {
     const ul = document.createElement("ul");
     ul.className = "list-group"; // Bootstrap list group
-
+    eventParticipants.length = 0
     for (const attendee of attendees) {
       const name = attendee.profile.name ?? "Unknown";
       const esnCard = attendee.answers?.[0]?.answer ?? "N/A";
